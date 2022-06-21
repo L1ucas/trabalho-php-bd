@@ -1,0 +1,6 @@
+{"nome":"Airton Junior","capital":"200","cpf":"89848538758","endereco":"R. Dos pão 765","tel":"88995566666","tempo":"3","email":"vitin@gmail.com","senha":"123456789"}
+{"nome":"Avelino","capital":"200","cpf":"89848538758","endereco":"R. Dos pão 765","tel":"88995566666","tempo":"3","email":"vitin@gmail.com","senha":"65465465"}
+{"nome":"Pedro","capital":"200","cpf":"89848538758","endereco":"R. Dos pão 765","tel":"88995566666","tempo":"3","email":"vitin@gmail.com","senha":"121212"}
+{"nome":"Vitor Hugo","capital":"200","cpf":"89848538758","endereco":"R. Dos pão 765","tel":"88995566666","tempo":"3","email":"vitin@gmail.com","senha":"i7tu6"}
+{"nome":"Edson Arantes Nascimento, mais conhecido como pelé","capital":"200","cpf":"89848538758","endereco":"R. Dos pão 765","tel":"88995566666","tempo":"3","email":"vitin@gmail.com","senha":"354453534354"}
+{"nome":"João","capital":"1000","cpf":"12345678912","endereco":"R. Luan Nascimento 56","tel":"12345678912","tempo":"12","email":"joao_luan@hotmail.com","senha":"123456789"}
