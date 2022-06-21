@@ -99,9 +99,8 @@
                 <td>Botões</td>
             </thead>
             <tbody id="myTable">
-                <tr >
-                    <td>Jiu-jitsu</td>
-
+                <tr>
+                    <td>João</td>
                     <td>100</td>
                     <td>10</td>
                     <td>1% (composto)</td>
@@ -110,8 +109,7 @@
                 </tr>
 
                 <tr>
-                    <td>Moicano</td>
-
+                    <td>Lucas</td>
                     <td>14000</td>
                     <td>10</td>
                     <td>15% (composto)</td>
@@ -120,8 +118,7 @@
                 </tr>
 
                 <tr>
-                    <td>Robert</td>
-
+                    <td>Jar jar binks</td>
                     <td>1050</td>
                     <td>10</td>
                     <td>10% (composto)</td>
@@ -130,8 +127,7 @@
                 </tr>
 
                 <tr>
-                    <td>Jamaicano</td>
-
+                    <td>Irineu</td>
                     <td>2000</td>
                     <td>10</td>
                     <td>10% (composto)</td>
@@ -141,7 +137,6 @@
 
                 <tr>
                     <td>Japonês da federal</td>
-
                     <td>3000</td>
                     <td>10</td>
                     <td>9% (composto)</td>
@@ -151,7 +146,42 @@
 
             </tbody>
         </table>
+        
     </article>
+
+    <script>
+        let tablea = document.getElementById("myTable")
+
+        <?php
+        $handle = fopen("banco.txt", "r");
+        if ($handle) {
+            while (($line = fgets($handle)) !== false) {
+                
+        ?>
+
+
+        
+        var node = document.createElement("tr");
+        
+        
+        for (let i = 0; i < [JSON.parse("<?php $line?>").nome, JSON.parse("<?php $line?>").capital, JSON.parse("<?php $line?>").tempo, JSON.parse("<?php $line?>").tel].length; i++) {
+            var node2 = document.createElement("td");
+            const textnode = document.createTextNode([]);
+            node2.appendChild(textnode)
+            node.appendChild(node2)
+        }
+        
+        tablea.appendChild(node)
+
+            
+        <?php
+        }
+
+        fclose($handle);
+    }
+    ?>
+
+    </script>
 
     <script src="jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>

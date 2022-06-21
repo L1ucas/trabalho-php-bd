@@ -12,7 +12,7 @@ function entrar() {
     else {
         if(email.value === emailPraEntrar &&
             senha.value === senhaPraEntrar){
-                window.location.href = "tela_dividas.php";
+                window.location.href = "funcionario_dividas.php";
         } else {
             alert("senha ou email inválido")
             email.value = ""

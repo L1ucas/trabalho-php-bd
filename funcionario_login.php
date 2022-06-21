@@ -59,7 +59,7 @@
 
   </article>
 
-  <script src="script-login.js"></script>
+  <script src="script_login.js"></script>
 </body>
 
 </html>
