@@ -1,3 +1,5 @@
+<?php include_once 'banco_de_dados.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -144,43 +146,15 @@
                     </td>
                 </tr>
 
+                <?php ler_e_imprimir_banco();?>
+
             </tbody>
         </table>
         
     </article>
 
     <script>
-        let tablea = document.getElementById("myTable")
-
-        <?php
-        $handle = fopen("banco.txt", "r");
-        if ($handle) {
-            while (($line = fgets($handle)) !== false) {
-                
-        ?>
-
-
         
-        var node = document.createElement("tr");
-        
-        
-        for (let i = 0; i < [JSON.parse("<?php $line?>").nome, JSON.parse("<?php $line?>").capital, JSON.parse("<?php $line?>").tempo, JSON.parse("<?php $line?>").tel].length; i++) {
-            var node2 = document.createElement("td");
-            const textnode = document.createTextNode([]);
-            node2.appendChild(textnode)
-            node.appendChild(node2)
-        }
-        
-        tablea.appendChild(node)
-
-            
-        <?php
-        }
-
-        fclose($handle);
-    }
-    ?>
-
     </script>
 
     <script src="jquery-3.6.0.min.js"></script>
