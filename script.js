@@ -32,7 +32,8 @@ function mascaraUni(id){
     const mascara = {
         tel: valorInput.replace(/[^\d]/g, ""),
         cpf: valorInput.replace(/[^\d]/g, "").replace(/^(\d{3})(\d{3})(\d{3})(\d{2}).*/, '$1.$2.$3-$4'),
-        tel: valorInput.replace(/[^\d]/g, "").replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3')
+        tel: valorInput.replace(/[^\d]/g, "").replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3'),
+        dinheiro: valorInput.replace(/[^\d]/g, "").replace(/[',\.]/g, "")
     };
 
 

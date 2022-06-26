@@ -5,26 +5,6 @@
     <?php include_once 'header.php' ?>
     <title>PEDIDOS DE EMPRÉSTIMO</title>
 </head>
-<style>
-    .my-dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .my-dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        padding: 12px 16px;
-        z-index: 1;
-    }
-
-    .my-dropdown:hover .my-dropdown-content {
-        display: block;
-    }
-</style>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -47,7 +27,7 @@
         </div>
 
     </nav>
-    <div style="display: flex; flex-direction: row;
+    <div id="pedidos" style="display: none;display: flex; flex-direction: row;
     justify-content: center; align-items: center;">
 
         <article class="servico-login 
@@ -65,13 +45,13 @@
                             <span class="input-group-text" id="basic-addon1">
                                 R$
                             </span>
-                            <input type="number" class="form-control">
+                            <input oninput="mascaraUni('dinheiro')" id="capital-reais" type="number" class="form-control">
                         </div>
                     </div>
                     <div class="col">
                         <label>Tempo a pagar</label>
                         <div class="input-group">
-                            <input type="number" class="form-control">
+                            <input id="tempo-dias" type="number" class="form-control">
                             <span class="input-group-text" id="basic-addon1">
                                 DIAS
                             </span>
@@ -81,10 +61,10 @@
                 <div class="row">
                     <div class="col">
                         <label>Tipo de juros</label>
-                        <select class="form-select" aria-label="Default select example">
+                        <select id="juros" class="form-select" aria-label="Default select example">
                             <option selected>Escolher </option>
-                            <option value="Composto">Composto 5%</option>
-                            <option value="Simples">Simples 9%</option>
+                            <option value="1">Composto 5%</option>
+                            <option value="2">Simples 9%</option>
                         </select>
 
                     </div>
@@ -94,14 +74,15 @@
                             <span class="input-group-text" id="basic-addon1">
                                 R$
                             </span>
-                            <input type="number" class="form-control" readonly>
+                            <input oninput="mascaraUni('dinheiro')" id="total-montante" type="number" class="form-control" readonly>
+                            <button class="btn btn-primary" type="button" onclick="update()">Calcular</button>
                         </div>
 
                     </div>
                 </div>
                 <div class="row" style="padding-top: 3%; display: flex; justify-content: space-evenly;">
-                    <button class="btn btn-primary" style="width:fit-content">Solicitar empréstimo</button>
-                    <button class="btn btn-primary" style="width:fit-content">Cancelar</button>
+                    <button id="btn-fun" class="btn btn-primary" type="button" style="width:fit-content">Solicitar empréstimo</button>
+                    <button class="btn btn-primary" style="width:fit-content" type="button">Cancelar</button>
                 </div>
 
             </form>
@@ -120,22 +101,24 @@
             </header>
             <input type="text" name="" id="myInput" class="form-control">
             <table class="table" style="color:white">
-            <thead></thead>
-            <tbody id="myTable">
-                <tr>
-                    <td>pao</td>
-                </tr>
-                <tr>
-                    <td>arroz</td>
-                </tr>
-                <tr>
-                    <td>adda</td>
-                </tr>
-                <tr>
-                    <td>dada</td>
-                </tr>
+                <thead></thead>
+                <tbody id="myTable">
+                    <tr>
+                        <td>pao</td>
+                    </tr>
+                    <tr>
+                        <td>arroz</td>
+                    </tr>
+                    <tr>
+                        <td>adda</td>
+                    </tr>
+                    <tr>
+                        <td>dada</td>
+                    </tr>
             </table>
-    </tbody>
+            </tbody>
+
+            <button class="btn btn-primary" id="solicitar" style="margin-bottom: 5%">Solicitar novo empréstimo</button>
         </article>
     </div>
 
@@ -143,6 +126,7 @@
     <script src="popper.min.js"></script>
     <script src="bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="cadastro_juros.js"></script>
 </body>
 
 </html>
