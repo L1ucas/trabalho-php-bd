@@ -19,7 +19,7 @@
 
             <div class="d-flex">
 
-                <a href="login.html"><button class="btn btn-outline-success" type="submit">VOLTAR AO LOGIN</button></a>
+                <a href="index.php"><button class="btn btn-outline-success" type="submit">VOLTAR AO INÍCIO</button></a>
 
             </div>
 

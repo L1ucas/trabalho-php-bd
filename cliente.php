@@ -35,25 +35,21 @@
             <div class="container" style="width: 95%">
 
 
-
-
-
-                <div class="col-sm-1" style="margin-right: 1em">
-                    <div class="foto"></div>
-                </div>
                 <div class="row">
-                    <div class="col-sm-2"></div>
+                    <div class="col-sm-2">
+                        <label>FOTO</label>
+                        <input type="file" name="" id="">
+                    </div>
                     <div class="col-sm-5">
                         <label>NOME</label>
                         <input id="nome" type="text" class="form-control">
                     </div>
                     <div class="col-sm-5">
-                        <label>CAPITAL</label>
-                        <input id="capital" type="text" class="form-control">
+                        <label>TELEFONE</label>
+                        <input id="tel" id="txtTel" oninput="mascaraUni('tel')" maxlength="11" type="text" class="form-control">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-2"></div>
                     <div class="col-sm-5">
                         <label>CPF</label>
                         <input id="cpf" oninput="mascaraUni('cpf')" maxlength="11" type="text" class="form-control">
@@ -61,17 +57,6 @@
                     <div class="col-sm-5">
                         <label>ENDEREÇO</label>
                         <input id="endereco" type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-5">
-                        <label>TELEFONE</label>
-                        <input id="tel" id="txtTel" oninput="mascaraUni('tel')" maxlength="11" type="text" class="form-control">
-                    </div>
-                    <div class="col-sm-5">
-                        <label>TEMPO A PAGAR</label>
-                        <input id="tempo" type="text" class="form-control">
                     </div>
                 </div>
                 <div class="row">
@@ -96,6 +81,7 @@
 
                 </div>
             </div>
+
         </article>
 
     </div>

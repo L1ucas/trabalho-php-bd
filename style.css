@@ -11,21 +11,6 @@
     margin-right: 20%;
 }
 
-.foto {
-    background: gray;
-    position: absolute;
-    border-radius: 1em;
-    width: 120px;
-    height: 160px;
-    
-}
-
-@media only screen and (max-width: 384px) {
-    .foto {
-        position: relative;
-    }
-}
-
 article {
     margin-right: 16%;
     margin-left: 16%;

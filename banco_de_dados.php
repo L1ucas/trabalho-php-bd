@@ -11,7 +11,6 @@ if (!empty($_POST['data'])) {
     fclose($file);
 }
 
-
 function ler_e_imprimir_banco(){
     $handle = fopen("banco.txt", "r");
 

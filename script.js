@@ -43,13 +43,12 @@ function mascaraUni(id){
 
 function cancelarCadastro(){
     document.getElementById("nome").value = ""  
-    document.getElementById("capital").value = ""
     document.getElementById("tel").value = ""
     document.getElementById("email").value = ""
     document.getElementById("senha").value = ""
-    document.getElementById("tempo").value = ""
     document.getElementById("endereco").value = ""
     document.getElementById("cpf").value = ""
+    window.location.href = "cliente_login.php"
 }
 
 
