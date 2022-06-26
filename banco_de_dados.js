@@ -4,24 +4,34 @@ let button = document.getElementById("btn-concluir-cadastro-cliente")
 button.addEventListener('click', () => {
 
     let Cliente = {}
+        let nome =$("#nome").val()
+        let cpf = $("#cpf").val() 
+        let endereco = $("#endereco").val() 
+        let tel = $("#tel").val()
+        let email = $("#email").val()
+        let senha = $("#senha").val()
 
-    if ($("#nome").val() == "" ||
-        $("#capital").val() == "" ||
-        $("#cpf").val() == "" ||
-        $("#endereco").val() == "" ||
-        $("#tel").val() == "" ||
-        $("#tempo").val() == "" ||
-        $("#email").val() == "" ||
-        $("#senha").val() == ""
+    if (nome == "" ||
+        cpf == "" ||
+        endereco == "" ||
+        tel == "" ||
+        email == "" ||
+        senha == ""
     ) {
         alert("Por favor preencha todos os campos")
-    } else {
-        Cliente.nome = $("#nome").val()
-        Cliente.cpf = $("#cpf").val().replace(/[^0-9]/g, "")
-        Cliente.endereco = $("#endereco").val()
-        Cliente.tel = $("#tel").val().replace(/[^0-9]/g, "")
-        Cliente.email = $("#email").val()
-        Cliente.senha = $("#senha").val()
+    }else if(
+        tel.replace(/[^0-9]/g, "").length != 11 ||
+        cpf.replace(/[^0-9]/g, "").length != 11 
+    ){
+        alert("Por favor preencha corretamente os dados do telefone ou do cpf")
+    }
+     else {
+        Cliente.nome = nome
+        Cliente.cpf = cpf.replace(/[^0-9]/g, "")
+        Cliente.endereco = endereco
+        Cliente.tel = tel.replace(/[^0-9]/g, "")
+        Cliente.email = email
+        Cliente.senha = senha
 
         console.log(Cliente)
 
@@ -31,7 +41,7 @@ button.addEventListener('click', () => {
         xhr.open('post', 'banco_de_dados.php', true);
         xhr.send(data);
 
-        alert("Cadastro realizado")
+        alert("Cadastro realizado! Agora você pode entrar na tela de login")
     }
 
 }

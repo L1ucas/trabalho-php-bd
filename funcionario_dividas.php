@@ -38,39 +38,39 @@
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
                     <label>NOME</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" readonly>
                 </div>
                 <div class="col-sm-4">
                     <label>CAPITAL</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" readonly>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
                     <label>CPF</label>
-                    <input type="text" class="form-control" placeholder="000.000.000-00">
+                    <input type="text" class="form-control" placeholder="000.000.000-00" readonly>
                 </div>
                 <div class="col-sm-4">
                     <label>ENDEREÇO</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" readonly>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
                     <label>TELEFONE</label>
-                    <input type="text" class="form-control" placeholder="(00) 00000 0000">
+                    <input type="text" class="form-control" placeholder="(00) 00000 0000" readonly>
                 </div>
                 <div class="col-sm-4">
                     <label>TEMPO A PAGAR</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" readonly>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label>EMAIL</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" readonly>
                 </div>
             </div>
         </div>

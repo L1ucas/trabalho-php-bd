@@ -3,11 +3,15 @@
 
 # cadastro do cliente
 if (!empty($_POST['data'])) {
+
     $data = $_POST['data'];
     $fname = "banco.txt";
 
+    $output = null;
+    exec("./ler_json.py 1 '" . $data . "'", $output);
+
     $file = fopen($fname, 'a+');
-    fwrite($file, "\n" . $data);
+    fwrite($file, "\n" . $output[0]);
     fclose($file);
 }
 
