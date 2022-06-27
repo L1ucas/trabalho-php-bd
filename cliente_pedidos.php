@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +28,7 @@
         </div>
 
     </nav>
-    <div id="pedidos" style="display: none;display: flex; flex-direction: row;
+    <div id="pedidos" style="display: none !important; display: flex; flex-direction: row;
     justify-content: center; align-items: center;">
 
         <article class="servico-login 
@@ -36,8 +37,6 @@
             <header>
                 <h1>PEDIR EMPRÉSTIMO</h1>
             </header>
-
-            <form>
                 <div class="row">
                     <div class="col">
                         <label>Capital</label>
@@ -45,13 +44,13 @@
                             <span class="input-group-text" id="basic-addon1">
                                 R$
                             </span>
-                            <input oninput="mascaraUni('dinheiro')" id="capital-reais" type="number" class="form-control">
+                            <input oninput="mascaraUni('dinheiro')" id="capital-reais" name="capital-reais" type="number" class="form-control">
                         </div>
                     </div>
                     <div class="col">
-                        <label>Tempo a pagar</label>
+                        <label>Intervalo de pagamento</label>
                         <div class="input-group">
-                            <input id="tempo-dias" type="number" class="form-control">
+                            <input name="tempo-dias" id="tempo-dias" type="number" class="form-control">
                             <span class="input-group-text" id="basic-addon1">
                                 DIAS
                             </span>
@@ -61,10 +60,10 @@
                 <div class="row">
                     <div class="col">
                         <label>Tipo de juros</label>
-                        <select id="juros" class="form-select" aria-label="Default select example">
+                        <select id="juros" name="juros" class="form-select" aria-label="Default select example">
                             <option selected>Escolher </option>
-                            <option value="1">Composto 5%</option>
-                            <option value="2">Simples 9%</option>
+                            <option value="c">Composto 5%</option>
+                            <option value="s">Simples 9%</option>
                         </select>
 
                     </div>
@@ -74,18 +73,16 @@
                             <span class="input-group-text" id="basic-addon1">
                                 R$
                             </span>
-                            <input oninput="mascaraUni('dinheiro')" id="total-montante" type="number" class="form-control" readonly>
+                            <input oninput="mascaraUni('dinheiro')" name="total-montante" id="total-montante" type="number" class="form-control" readonly>
                             <button class="btn btn-primary" type="button" onclick="update()">Calcular</button>
                         </div>
 
                     </div>
                 </div>
                 <div class="row" style="padding-top: 3%; display: flex; justify-content: space-evenly;">
-                    <button id="btn-fun" class="btn btn-primary" type="button" style="width:fit-content">Solicitar empréstimo</button>
-                    <button class="btn btn-primary" style="width:fit-content" type="button">Cancelar</button>
+                   <button class="btn btn-primary" id="btn-concluir-cadastro-cliente" style="width:fit-content" type="button">Solicitar empréstimo</button>
+                    <button id="cancelar" class="btn btn-primary" style="width:fit-content" type="button">Cancelar</button>
                 </div>
-
-            </form>
 
 
         </article>

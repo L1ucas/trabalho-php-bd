@@ -9,7 +9,7 @@ if (!empty($_POST['data'])) {
 
     $output = null;
     exec("./ler_json.py 1'" . $data . "'", $output);
-
+    
     $file = fopen($fname, 'a+');
     fwrite($file, "\n" . $output[0]);
     fclose($file);

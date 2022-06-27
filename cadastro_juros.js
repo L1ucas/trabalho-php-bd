@@ -1,20 +1,57 @@
 
 $("#pedidos").hide();
+let montante = $("#total-montante")
+let tempo = $("#tempo-dias")
+let capital = $("#capital-reais")
+let juros = $("#juros")
 
-let montante = document.getElementById("total-montante")
-let tempo = document.getElementById("tempo-dias")
-let capital = document.getElementById("capital-reais")
-let juros = document.getElementById("juros")
-
-$("#solicitar").click(function(){
-    $("#pedidos")
+$("#solicitar").click(function () {
     $("#pedidos").show(1000, "swing");
-  }); 
+    $("#pedidos").css("display", "flex");
+});
+$("#cancelar").click(function () {
+    $("#pedidos").hide(1000, "swing");
+})
+
 function update() {
-    if(juros.value == "1") {
-        montante.value = Number(capital.value) * ((1 + 0.05)^Number(tempo.value))
+    console.log(juros.val())
+    console.log(tempo.val())
+    console.log(capital.val)
+    if (juros.val() == "c") {
+        montante.val(String(Number(capital.val()) * ((1 + 0.05) ^ Number(tempo.val())))).change();
     }
-    else if (juros.value == "2"){
-        montante.value = Number(capital.value) * Number(tempo.value) * 0.09
+    else if (juros.val() == "s") {
+        montante.val(String(Number(capital.val()) * Number(tempo.val()) * 0.09)).change();
     }
 }
+
+let button = document.getElementById("btn-concluir-cadastro-cliente")
+
+button.addEventListener('click', () => {
+
+    let emprestimo = {}
+
+    if ( montante.val() == "" ||
+        tempo.val() == "" ||
+        capital.val() == "" ||
+        juros.val() == ""
+    ) {
+        alert("Por favor preencha todos os campos")
+    } else {
+        emprestimo.montante = montante.val().replace(/^\d/g, "")
+        emprestimo.tempo = tempo.val().replace(/^\d/g, "")
+        emprestimo.capital = capital.val().replace(/^\d/g, "")
+        emprestimo.juros = juros.val()
+        emprestimo.status = "0"
+
+        var data = new FormData();
+        data.append("data", JSON.stringify(emprestimo));
+        var xhr = (window.XMLHttpRequest) ? new XMLHttpRequest() : new activeXObject("Microsoft.XMLHTTP");
+        xhr.open('post', 'banco_de_dividas.php', true);
+        xhr.send(data);
+
+        alert("Empréstimo solicitado")
+    }
+
+}
+)

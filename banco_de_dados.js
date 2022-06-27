@@ -33,7 +33,6 @@ button.addEventListener('click', () => {
         Cliente.email = email
         Cliente.senha = senha
 
-        console.log(Cliente)
 
         var data = new FormData();
         data.append("data", JSON.stringify(Cliente));
