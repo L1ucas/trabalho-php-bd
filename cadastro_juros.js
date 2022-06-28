@@ -38,11 +38,12 @@ button.addEventListener('click', () => {
     ) {
         alert("Por favor preencha todos os campos")
     } else {
+        emprestimo.nome = document.getElementById("nomi").innerHTML.replace(/\n/g, "");
+        emprestimo.id = document.getElementById("idzinho").innerHTML.replace(/\n/g, "");
         emprestimo.montante = montante.val().replace(/^\d/g, "")
         emprestimo.tempo = tempo.val().replace(/^\d/g, "")
         emprestimo.capital = capital.val().replace(/^\d/g, "")
         emprestimo.juros = juros.val()
-        emprestimo.status = "0"
 
         var data = new FormData();
         data.append("data", JSON.stringify(emprestimo));

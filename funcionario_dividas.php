@@ -30,53 +30,7 @@
 
     </nav>
     <article style="margin-top: 2em;">
-        <div class="container">
-            <div class="col-sm-4">
-                <div class="foto"><img src="imagens/barriguinha.jpeg" style="width: 120px; height:300;"></div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <label>NOME</label>
-                    <input type="text" class="form-control" readonly>
-                </div>
-                <div class="col-sm-4">
-                    <label>CAPITAL</label>
-                    <input type="text" class="form-control" readonly>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <label>CPF</label>
-                    <input type="text" class="form-control" placeholder="000.000.000-00" readonly>
-                </div>
-                <div class="col-sm-4">
-                    <label>ENDEREÇO</label>
-                    <input type="text" class="form-control" readonly>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <label>TELEFONE</label>
-                    <input type="text" class="form-control" placeholder="(00) 00000 0000" readonly>
-                </div>
-                <div class="col-sm-4">
-                    <label>TEMPO A PAGAR</label>
-                    <input type="text" class="form-control" readonly>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label>EMAIL</label>
-                    <input type="text" class="form-control" readonly>
-                </div>
-            </div>
-        </div>
-
-
-
+        
 
         <div class="container" style="margin-bottom: 1em; display:flex;
         flex-direction: column; justify-content: center; align-items: center">
@@ -94,11 +48,10 @@
         style="overflow: hidden;">
             <thead>
                 <td>NOME</td>
-
-                <td>CAPITAL</td>
+                <td>MONTANTE</td>
                 <td>TEMPO A PAGAR</td>
                 <td>JUROS</td>
-                <td>Botões</td>
+                <td>Selecionar</td>
             </thead>
             <tbody id="myTable">
                 <tr>
@@ -106,7 +59,6 @@
                     <td>100</td>
                     <td>10</td>
                     <td>1% (composto)</td>
-                    <td><?php include "adeilson.php";?>
                     </td>
                 </tr>
 
@@ -115,7 +67,6 @@
                     <td>14000</td>
                     <td>10</td>
                     <td>15% (composto)</td>
-                    <td><?php include "adeilson.php";?>
                     </td>
                 </tr>
 
@@ -124,7 +75,6 @@
                     <td>1050</td>
                     <td>10</td>
                     <td>10% (composto)</td>
-                    <td><?php include "adeilson.php";?>
                     </td>
                 </tr>
 
@@ -133,7 +83,6 @@
                     <td>2000</td>
                     <td>10</td>
                     <td>10% (composto)</td>
-                    <td><?php include "adeilson.php";?>
                     </td>
                 </tr>
 
@@ -142,7 +91,6 @@
                     <td>3000</td>
                     <td>10</td>
                     <td>9% (composto)</td>
-                    <td><?php include "adeilson.php";?>
                     </td>
                 </tr>
 

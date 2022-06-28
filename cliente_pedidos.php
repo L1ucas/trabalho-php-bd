@@ -3,13 +3,14 @@
 $emailzinho = $_POST['email_login'];
 
 $senha = hash("sha256", $_POST['senha']);
-
 $id = "";
+
+$nome = "";
 $handle = fopen("banco.txt", "r");
 $status = "";
 if ($handle) {
     $line_number = 0;
-    
+
     while (($line = fgets($handle)) !== false && $status != "OK") {
         $jsonIterator = new RecursiveIteratorIterator(
             new RecursiveArrayIterator(json_decode($line, TRUE)),
@@ -25,25 +26,31 @@ if ($handle) {
 
             if ($key == "email") {
                 $em = $val;
-            }
+            }   
 
+            if ($key == "nome") {
+                $nome = $val;
+            }
             if ($key == "senha" && $val == $senha && $em == $emailzinho) {
-               
-                    $status == "OK";
-                    $id = $tempID;
-                    break;
-            }
 
-            
+                $status = "OK";
+                $id = $tempID;
+                break;
+            }
         }
     }
 
     fclose($handle);
 }
-echo $id;
-
+if ($status != "OK") {
+    echo "<script>alert('Você inseriu os dados errados ou você não existe na tabela');
+                    window.location.href = 'cliente_login.php'
+    </script>";
+}
 
 ?>
+<div hidden id="idzinho"><?php echo $id;?></div>
+<div hidden id="nomi"><?php echo $nome;?></div>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -145,20 +152,63 @@ echo $id;
             </header>
             <input type="text" name="" id="myInput" class="form-control">
             <table class="table" style="color:white">
-                <thead></thead>
+                <thead>
+                        <td>Montante a pagar</td>
+                        <td>Tempo</td>
+                        <td>Capital</td>
+                        <td>Juros</td>
+                </thead>
                 <tbody id="myTable">
-                    <tr>
-                        <td>pao</td>
-                    </tr>
-                    <tr>
-                        <td>arroz</td>
-                    </tr>
-                    <tr>
-                        <td>adda</td>
-                    </tr>
-                    <tr>
-                        <td>dada</td>
-                    </tr>
+                    <?php
+
+                    $handle2 = fopen("banco_dividas.txt", "r");
+
+                    $success2 = "";
+                    if ($handle2) {
+                        $line_number = 0;
+                        while (($line = fgets($handle2)) !== false) {
+                            $jsonIterator = new RecursiveIteratorIterator(
+                                new RecursiveArrayIterator(json_decode($line, TRUE)),
+                                RecursiveIteratorIterator::SELF_FIRST
+                            );
+                            $line_number++;
+
+
+                            echo "<tr>";
+                            foreach ($jsonIterator as $key => $val) {
+                                if ($success2 == "OK") {
+                                    break;
+                                } else {
+                                    if ($val == "id") {
+                                        echo "<td>$val</td>\n";
+                                        $success2 = "OK";
+                                    }
+                                    if ($key == "montante") {
+                                        echo "<td>R&#36;$val</td>";
+                                    }
+                                    if ($key == "tempo") {
+                                        echo "<td>$val dias</td>";
+                                    }
+                                    if ($key == "capital") {
+                                        echo "<td>R&#36;$val</td>";
+                                    }
+                                    if ($key == "juros") {
+                                        if ($val == "s") {
+                                            echo "<td>Simples 9%</td>";
+                                        } else {
+                                            echo "<td>Composto 5%</td>";
+                                        }
+                                    }
+                                }
+                            }
+                            echo "</tr>";
+                        }
+
+                        fclose($handle2);
+                    }
+                    ?>
+
+
             </table>
             </tbody>
 

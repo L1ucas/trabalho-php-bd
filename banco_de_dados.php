@@ -36,7 +36,7 @@ if (!empty($_POST['data'])) {
 }
 
 function ler_e_imprimir_banco(){
-    $handle = fopen("banco.txt", "r");
+    $handle = fopen("banco_dividas.txt", "r");
 
     if ($handle) {
         $line_number = 0;
@@ -46,22 +46,34 @@ function ler_e_imprimir_banco(){
                 RecursiveIteratorIterator::SELF_FIRST);
             $line_number++;
 
-            
-            echo "<tr id='bd-" . $line_number . "'>";
-            echo "<td>" . $line_number . "</td>";
+        
+            echo "<tr id='line-$line_number'>";
             foreach ($jsonIterator as $key => $val) {
-                if(is_array($val)) {
-                    echo "$key:\n";
-                }
-                else if($key == "nome" || $key == "senha" 
-                || $key == "id" || $key == "email" || $key == "cpf"
-                || $key == "endereco"){
+                if ($key == "id") {
                     continue;
-                } else {
-                    echo "<td>$val</td>\n";
                 }
-                
+                else if ($key == "montante") {
+                    echo "<td>R&#36;$val</td>";
+                }
+                else if ($key == "tempo") {
+                    echo "<td>$val dias</td>";
+                }
+                else if ($key == "juros") {
+                    if ($val == "s") {
+                        echo "<td>Simples 9%</td>";
+                    } else {
+                        echo "<td>Composto 5%</td>";
+                    }
+                }
+                elseif ($key == "capital") {
+                    continue;
+                }
+                else{
+                    echo "<td>$val</td>";
+                }
+
             }
+            echo '<td><input type="checkbox" name="" id=""></td>';
             echo "</tr>";
         }
 
