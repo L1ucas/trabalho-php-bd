@@ -1,2 +1,3 @@
 {"montante": "3999.579999999998", "tempo": "2", "capital": "2121", "juros": "s", "status": "0"}
 {"montante": "3999.579999999998", "tempo": "2", "capital": "2121", "juros": "s", "status": "0"}
+{"montante": "308.96", "tempo": "2", "capital": "212", "juros": "s", "status": "0"}

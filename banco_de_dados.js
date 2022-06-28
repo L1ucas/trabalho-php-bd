@@ -4,34 +4,35 @@ let button = document.getElementById("btn-concluir-cadastro-cliente")
 button.addEventListener('click', () => {
 
     let Cliente = {}
-        let nome =$("#nome").val()
-        let cpf = $("#cpf").val() 
-        let endereco = $("#endereco").val() 
-        let tel = $("#tel").val()
-        let email = $("#email").val()
-        let senha = $("#senha").val()
+        let nome =$("#nome");
+        let cpf = $("#cpf");
+        let endereco = $("#endereco");
+        let tel = $("#tel");
+        let email = $("#email");
+        let senha = $("#senha");
 
-    if (nome == "" ||
-        cpf == "" ||
-        endereco == "" ||
-        tel == "" ||
-        email == "" ||
-        senha == ""
+    if (nome.val() == "" ||
+        cpf.val() == "" ||
+        endereco.val() == "" ||
+        tel.val() == "" ||
+        email.val() == "" ||
+        senha.val() == ""
     ) {
         alert("Por favor preencha todos os campos")
     }else if(
-        tel.replace(/[^0-9]/g, "").length != 11 ||
-        cpf.replace(/[^0-9]/g, "").length != 11 
+        tel.val().replace(/[^0-9]/g, "").length != 11 ||
+        cpf.val().replace(/[^0-9]/g, "").length != 11 
     ){
-        alert("Por favor preencha corretamente os dados do telefone ou do cpf")
+        alert("Por favor preencha corretamente os dados do telefone ou do cpf");
     }
      else {
-        Cliente.nome = nome
-        Cliente.cpf = cpf.replace(/[^0-9]/g, "")
-        Cliente.endereco = endereco
-        Cliente.tel = tel.replace(/[^0-9]/g, "")
-        Cliente.email = email
-        Cliente.senha = senha
+        Cliente.nome = nome.val();
+        Cliente.cpf = cpf.val().replace(/[^0-9]/g, "");
+        Cliente.endereco = endereco.val();
+        Cliente.tel = tel.val().replace(/[^0-9]/g, "");
+        Cliente.email = email.val();
+        Cliente.senha = senha.val();
+
 
 
         var data = new FormData();

@@ -25,15 +25,13 @@ elif sys.argv[1] == '2':
 
 # checkar login
 elif sys.argv[1] == '3':
-    line = sys.argv[2]
-    o = json.loads(line)
+    email = sys.argv[2]
+    senha = sys.argv[3]
     Lines = open("banco.txt", "r")
-
+#
     for l in Lines:
-        if hashlib.sha256(str(l["senha"])\
-        .encode('utf-8'))\
-        .hexdigest() == o["senha"] and l["email"] == o["email"]:
-            print(o["id"])
-        else:
-            print("FALSE")
+        line = json.loads(l.rstrip("\n"))
+        if hashlib.sha256(str(line["senha"]).encode("utf-8")).hexdigest() == hashlib.sha256(str(senha).encode("utf-8")).hexdigest() and line["email"] == email:
+            print(str(line["id"]))
+    print("FALSE")
 

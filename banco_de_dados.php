@@ -8,10 +8,30 @@ if (!empty($_POST['data'])) {
     $fname = "banco.txt";
 
     $output = null;
-    exec("./ler_json.py 1'" . $data . "'", $output);
-    
+
+    $jsond = json_decode($data, true);
+
+    $mydate = json_encode(getdate());
+    $nome = $jsond["nome"];
+    $cpf = $jsond["cpf"];
+    $endereco = $jsond["endereco"];
+    $tel = $jsond["tel"];
+    $email = $jsond["email"];
+    $senha = hash("sha256", $jsond["senha"]);
+    $id = hash("md5", $mydate);
+
+    $dados = Array(
+        "id" => $id,
+        "nome" => $nome,
+        "cpf" => $cpf,
+        "endereco" => $endereco,
+        "tel" => $tel,
+        "email" => $email,
+        "senha" => $senha
+    );
+
     $file = fopen($fname, 'a+');
-    fwrite($file, "\n" . $output[0]);
+    fwrite($file, "\n" . json_encode($dados));
     fclose($file);
 }
 

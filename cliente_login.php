@@ -29,7 +29,6 @@
     </nav>
     <div style="display: flex; flex-direction: row;
     justify-content: center; align-items: center;">
-    
     <article class="servico-login 
     servico-a" style="width: fit-content">
 
@@ -37,19 +36,20 @@
             <h1>Tela de login</h1>
         </header>
         
-        <form>
+
+        <form action="cliente_pedidos.php" method="post">
             <div class="row">
                 <div class="col">
                     <label>Email</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" id="email" name="email_login">
 
 
                     <label>Senha</label>
-                    <input type="password" class="form-control" id="senha">
+                    <input type="password" class="form-control" id="senha" name="senha">
                 </div>
             </div>
             <div class="row" style="padding-top: 3%; display: flex; justify-content: center;">
-                    <button class="btn btn-primary" style="width:fit-content" id="entrar-btn">Entrar</button>
+                    <button class="btn btn-primary" style="width:fit-content" type="submit" id="entrar-btn">Entrar</button>
 
             </div>
             
@@ -60,9 +60,8 @@
                 </div>
                 
             </div>
+            <form>
 
-
-        </form>
 
 
     </article>

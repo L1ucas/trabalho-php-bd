@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-sm-5">
                         <label>TELEFONE</label>
-                        <input id="tel" id="txtTel" oninput="mascaraUni('tel')" maxlength="11" type="text" class="form-control">
+                        <input id="tel" oninput="mascaraUni('tel')" maxlength="11" type="text" class="form-control">
                     </div>
                 </div>
                 <div class="row">
